@@ -5,8 +5,57 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CRUDEmpleado"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="600" Width="400">
+    <Grid Background="#FFA7F0F9">
+        <Label Content="Empleado" HorizontalAlignment="Left" Height="30" Margin="155,10,0,0" VerticalAlignment="Top" Width="80" FontWeight="Bold"/>
+        <Label Content="Nombre:" HorizontalAlignment="Left" Height="25" Margin="90,54,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="24" Margin="95,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.895"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.234"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="Apellido:" HorizontalAlignment="Left" Height="25" Margin="90,114,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txtApellido" HorizontalAlignment="Left" Height="24" Margin="95,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.895"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.234"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="Correo:" HorizontalAlignment="Left" Height="25" Margin="90,174,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txtCorreo" HorizontalAlignment="Left" Height="24" Margin="95,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.895"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.234"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="Fecha" HorizontalAlignment="Left" Height="25" Margin="90,239,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="txtFecha" HorizontalAlignment="Left" Height="24" Margin="95,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="-0.895"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.234"/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Button Content="Ver" HorizontalAlignment="Center" Height="30" Margin="0,319,0,0" VerticalAlignment="Top" Width="210" FontSize="16" Background="#FF0ACCF1"/>
+        <Button Content="Editar" HorizontalAlignment="Center" Height="30" Margin="0,459,0,0" VerticalAlignment="Top" Width="210" FontSize="16" Background="#FFFFEB16"/>
+        <Button Content="Eliminar " HorizontalAlignment="Center" Height="30" Margin="0,409,0,0" VerticalAlignment="Top" Width="210" FontSize="16" Background="#FFF14444"/>
+        <Button x:Name="BntAdd"  Content="Agregar" HorizontalAlignment="Center" Height="30" Margin="0,364,0,0" VerticalAlignment="Top" Width="210" FontSize="16" Background="#FF2DFF1C" Click="BntAdd_Click"/>
 
     </Grid>
 </Window>

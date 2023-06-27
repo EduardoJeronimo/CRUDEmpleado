@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CRUDEmpleado.Entities;
+using CRUDEmpleado.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +25,27 @@ namespace CRUDEmpleado
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void BntAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Empleado emple = new Empleado();
+            EmpladosServices services = new EmpladosServices();
+
+            emple.Nombre = txtNombre.Text;
+            emple.Apellido = txtApellido.Text;
+            emple.Correo = txtCorreo.Text;
+
+            //agregar una condicion para no enviar datos nulos 
+
+            services.Agregar(emple);
+
+
+            txtNombre.Clear();
+            txtApellido.Clear();    
+            txtCorreo.Clear();
+            MessageBox.Show("Los datos se guardaron");
+
         }
     }
 }
