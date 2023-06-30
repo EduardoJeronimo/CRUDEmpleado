@@ -26,11 +26,12 @@ namespace CRUDEmpleado
         {
             InitializeComponent();
         }
+        Empleado emple = new Empleado();
+        EmpladosServices services = new EmpladosServices();
 
         private void BntAdd_Click(object sender, RoutedEventArgs e)
         {
-            Empleado emple = new Empleado();
-            EmpladosServices services = new EmpladosServices();
+           
 
             emple.Nombre = txtNombre.Text;
             emple.Apellido = txtApellido.Text;
@@ -40,7 +41,7 @@ namespace CRUDEmpleado
             if (string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtApellido.Text) || string.IsNullOrEmpty(txtCorreo.Text))
             {
          
-                MessageBox.Show("Por favor, complete todos los campos antes de guardar.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Por favor, complete todos los campos antes de guardar.");
             }
             else
             {
@@ -57,10 +58,20 @@ namespace CRUDEmpleado
                 MessageBox.Show("Los datos se guardaron");
 
             }
+        }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //btnleer
 
-           
+            int id = int.Parse(txtId.Text);
 
+            Empleado emple = services.Mostrar(id);
+
+            txtNombre.Text = emple.Nombre;
+            txtApellido.Text = emple.Apellido;
+            txtCorreo.Text = emple.Correo;
+            txtFecha.Text = emple.FechaRegistro.ToString();
         }
     }
 }

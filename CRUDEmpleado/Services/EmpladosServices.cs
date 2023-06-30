@@ -39,5 +39,28 @@ namespace CRUDEmpleado.Services
                 throw new Exception("Succedio un error: " + ex.Message);
             }
         }
+
+        public Empleado Mostrar(int id)
+        {
+            try
+            {
+                using (var _context = new ApplicationDbContext())
+                {
+                    Empleado empleado = _context.Empleados.Find(id);
+                    return empleado;
+                }
+
+
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception("Ocurrio un error" + ex.Message);
+            
+            }
+
+
+
+
+        }
     }
 }
