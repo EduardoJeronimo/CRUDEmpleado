@@ -29,6 +29,8 @@ namespace CRUDEmpleado
         Empleado emple = new Empleado();
         EmpladosServices services = new EmpladosServices();
 
+        //crear crear un boton resetear todos los campos 
+
         private void BntAdd_Click(object sender, RoutedEventArgs e)
         {
            
@@ -72,6 +74,16 @@ namespace CRUDEmpleado
             txtApellido.Text = emple.Apellido;
             txtCorreo.Text = emple.Correo;
             txtFecha.Text = emple.FechaRegistro.ToString();
+        }
+
+        private void BntClear_Click(object sender, RoutedEventArgs e)
+        {
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtCorreo.Clear();
+            txtFecha.Clear();
+            txtId.Clear();
+
         }
     }
 }
