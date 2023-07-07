@@ -9,6 +9,8 @@ namespace CRUDEmpleado.Entities
 {
     public class Empleado
     {
+        public object[] id;
+
         [Key]
         public int pkEmpleado { get; set; }
         public string Nombre { get; set; }

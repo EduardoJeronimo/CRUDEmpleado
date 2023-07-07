@@ -85,5 +85,59 @@ namespace CRUDEmpleado
             txtId.Clear();
 
         }
+
+        private void BtnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+
+            int id = int.Parse(txtId.Text);
+
+            services.Eliminar(id);
+
+            txtNombre.Clear();
+            txtApellido.Clear();
+            txtCorreo.Clear();
+            txtFecha.Clear();
+            txtId.Clear();
+            MessageBox.Show("Usuario eliminado");
+
+        }
+
+        private void BtnEditar_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                int id = int.Parse(txtId.Text);
+                Empleado empl = services.Mostrar(id);
+
+                if (empl != null)
+                {
+                    if (!string.IsNullOrEmpty(txtNombre.Text))
+                        empl.Nombre = txtNombre.Text;
+
+                    if (!string.IsNullOrEmpty(txtApellido.Text))
+                        empl.Apellido = txtApellido.Text;
+
+                    if (!string.IsNullOrEmpty(txtCorreo.Text))
+                        empl.Correo = txtCorreo.Text;
+
+                    services.Editar(empl);
+
+                    MessageBox.Show("Empleado editado correctamente");
+                    txtNombre.Clear();
+                    txtApellido.Clear();
+                    txtCorreo.Clear();
+                    txtId.Clear();
+                    txtFecha.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Empleado no encontrado.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al editar el empleado: " + ex.Message);
+            }
+        }
     }
 }
